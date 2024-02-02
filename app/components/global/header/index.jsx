@@ -3,54 +3,9 @@ import Search from "../search";
 import Button from "../button";
 import Image from "next/image";
 import Link from "next/link";
+import { navLinks } from "@/data";
 
 const Header = () => {
-  const navLinks = [
-    {
-      name: "Stock Video",
-      link: "/",
-    },
-    {
-      name: "Video Templates",
-      link: "/",
-    },
-    {
-      name: "Music",
-      link: "/",
-    },
-    {
-      name: "Sound Effects",
-      link: "/",
-    },
-    {
-      name: "Graphics Templates",
-      link: "/",
-    },
-    {
-      name: "Graphics",
-      link: "/",
-    },
-    {
-      name: "Presentation Templates",
-      link: "/",
-    },
-    {
-      name: "Photos",
-      link: "/",
-    },
-    {
-      name: "Fonts",
-      link: "/",
-    },
-    {
-      name: "Ads-ons",
-      link: "/",
-    },
-    {
-      name: "More",
-      link: "/",
-    },
-  ];
   return (
     <>
       <div className="border-b">
@@ -76,10 +31,8 @@ const Header = () => {
         <div className="container w-full mx-auto">
           <div className="flex gap-4">
             {navLinks.map((link, index) => (
-              <div className="text-sm font-semibold">
-                <Link href={link.link} key={index}>
-                  {link.name}
-                </Link>
+              <div className="text-sm font-semibold" key={index}>
+                <Link href={link.link}>{link.name}</Link>
               </div>
             ))}
           </div>

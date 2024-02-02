@@ -251,3 +251,50 @@ export const footerSubLinks = [
   { id: 133, name: "EULA", url: "/" },
   { id: 134, name: "Contact", url: "/" },
 ];
+
+export const navLinks = [
+  {
+    name: "Stock Video",
+    link: "/",
+  },
+  {
+    name: "Video Templates",
+    link: "/",
+  },
+  {
+    name: "Music",
+    link: "/",
+  },
+  {
+    name: "Sound Effects",
+    link: "/",
+  },
+  {
+    name: "Graphics Templates",
+    link: "/",
+  },
+  {
+    name: "Graphics",
+    link: "/",
+  },
+  {
+    name: "Presentation Templates",
+    link: "/",
+  },
+  {
+    name: "Photos",
+    link: "/",
+  },
+  {
+    name: "Fonts",
+    link: "/",
+  },
+  {
+    name: "Ads-ons",
+    link: "/",
+  },
+  {
+    name: "More",
+    link: "/",
+  },
+];
