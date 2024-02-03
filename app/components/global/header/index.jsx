@@ -9,17 +9,17 @@ const Header = () => {
   return (
     <>
       <div className="border-b">
-        <div className="container w-full mx-auto">
-          <div className="flex justify-between items-center py-4">
+        <div className="container w-full mx-auto px-2">
+          <div className="flex justify-between items-center py-4 flex-wrap">
             <div className="order-first">
               <Link href="/">
                 <Image src="/logo.png" alt="logo" width={100} height={200} />
               </Link>
             </div>
-            <div className="w-4/12">
+            <div className="w-full md:w-4/12 order-3 md:order-2 mt-3 md:mt-0">
               <Search placeholder="Search for Movies, TV Shows, Themes & Casts" />
             </div>
-            <div>
+            <div className="order-2 md:order-3">
               <Button className="">Log in</Button>
               <Button className="primary">Sign up</Button>
             </div>
@@ -27,7 +27,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="py-4 shadow-md">
+      <div className="py-4 shadow-md hidden md:block">
         <div className="container w-full mx-auto">
           <div className="flex gap-4">
             {navLinks.map((link, index) => (

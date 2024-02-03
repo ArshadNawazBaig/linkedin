@@ -6,7 +6,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className=" bg-gray-100">
-      <div className="container w-full mx-auto">
+      <div className="container w-full mx-auto px-2">
         <div className="grid grid-cols-1 border-b border-slate-200 pt-8 pb-6 mb-10">
           <h2 className="text-lg font-semibold">Follow us</h2>
         </div>
@@ -23,11 +23,11 @@ const Footer = () => {
           ))}
         </div>
         <div className="grid grid-cols-1 py-4">
-          <div className="flex items-center">
+          <div className="md:flex items-center">
             <Link href="/" className="mr-10">
               <Image src="/logo.png" alt="logo" width={100} height={200} />
             </Link>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               {footerSubLinks.map((link) => (
                 <div key={link.id} className="text-slate-600 text-sm">
                   <Link href={link.url}>{link.name}</Link>
