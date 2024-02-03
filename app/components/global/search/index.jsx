@@ -51,7 +51,10 @@ const Search = ({ placeholder }) => {
         onBlur={() => setIsFocused(false)}
       />
       {isFocused && (
-        <div className="absolute z-10 mt-3 px-8 py-6 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+        <div className="backdrop-blur-md mt-3 fixed left-0 right-0 h-full z-20"></div>
+      )}
+      {isFocused && (
+        <div className="absolute z-30 mt-3 px-8 py-6 w-full bg-white border border-gray-300 rounded-md shadow-lg">
           <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase">
             {query ? "Keywords" : "Trends"}
           </h3>
