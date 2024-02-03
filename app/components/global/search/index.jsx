@@ -1,6 +1,30 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 const Search = ({ placeholder }) => {
+  const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const dummySuggestions = [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "API",
+    "GraphQL",
+  ];
+
+  useEffect(() => {
+    const fetchSuggestions = () => {
+      const filteredSuggestions = dummySuggestions.filter((suggestion) =>
+        suggestion.toLowerCase().includes(query.toLowerCase())
+      );
+      setSuggestions(filteredSuggestions);
+    };
+    const timeoutId = setTimeout(fetchSuggestions, 300);
+    return () => clearTimeout(timeoutId);
+  }, [query]);
   return (
     <form className="group relative w-full">
       <svg
@@ -21,7 +45,33 @@ const Search = ({ placeholder }) => {
         type="text"
         aria-label="Filter projects"
         placeholder={placeholder}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
       />
+      {isFocused && (
+        <div className="absolute z-10 mt-3 px-8 py-6 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+          <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase">
+            {query ? "Keywords" : "Trends"}
+          </h3>
+          {suggestions.map((suggestion, index) => (
+            <Link
+              href={`/search?q=${encodeURIComponent(suggestion)}`}
+              key={index}
+              className="block text-sm font-semibold mb-2 flex items-center"
+            >
+              <span className="mr-6 text-2xl">#</span> {suggestion}
+            </Link>
+          ))}
+          <Link href="/" className="block text-sm font-semibold mt-4 flex">
+            <div className="mr-3 bg-pink-500 w-6 h-6 rounded-full text-white flex items-center justify-center">
+              #
+            </div>{" "}
+            Show all media
+          </Link>
+        </div>
+      )}
     </form>
   );
 };

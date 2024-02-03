@@ -39,7 +39,7 @@ const Carousel = ({ slides }) => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1279,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
