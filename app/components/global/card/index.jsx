@@ -7,7 +7,7 @@ const Card = ({ bookmark }) => {
   const { title, para, icon, link } = bookmark;
   return (
     <Link href={link}>
-      <div className="relative border border-gray-200 rounded-lg px-6 py-10 hover:shadow-2xl transition-all duration-300 min-h-60 group">
+      <div className="relative border border-gray-200 rounded-lg px-6 py-10 hover:shadow-lg transition-all duration-300 min-h-60 group">
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <Bookmark stroke="#979797" />
         </div>
